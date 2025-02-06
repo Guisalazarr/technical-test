@@ -30,6 +30,21 @@ export async function toGet(rote, token) {
 } 
 
 
+// Metodo DELETE para conexão com a API
+export async function toDelete(rote, token) {
+    
+    const response = await fetch(`${baseUrl}/${rote}`,{
+    method: 'DELETE',
+    headers: {
+        'Authorization':`${token}`,
+        'Content-Type': 'application/json',
+    }
+})
+
+    return await response.json()
+    
+} 
+
 
 
 
