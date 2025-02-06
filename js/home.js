@@ -95,20 +95,24 @@ async function createTransaction (data) {
 }
 }
 
-
+// Torna a função deleteTransaction Global
 window.deleteTransaction = deleteTransaction
 
+
+// Executa a função toDelete
 async function deleteTransaction(idDelete){
   try{
     const result = await toDelete(`user/${id}/transaction/${idDelete}`, token)
-    realoadPage()
-    handleFeedback(result)
 
+    handleFeedback(result)
+    if(result.ok){
+      realoadPage()
+    }
+   
   }catch(error){
     console.error('Error:', error.message);
   }
 }
-
 
 function realoadPage(){
   setTimeout(function() {
