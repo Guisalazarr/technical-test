@@ -1,14 +1,13 @@
-import { toGet, toPost } from "../service/api.service.js";
+import { toDelete, toGet, toPost } from "../service/api.service.js";
 import { handleTable} from "../utils/createTable.js";
 import { handleCard } from "../utils/handleCard.js";
 import handleFeedback from "../utils/feedbackAlert.js";
 import { getUserLogged } from "../utils/checkLogged.js";
 
-
 const user = getUserLogged()
 const id = user.id
 const token = user.token
-console.log(token)
+
 document.getElementById('name-user').innerText= user.name
 listTransaction()
 
@@ -88,9 +87,7 @@ async function createTransaction (data) {
     handleFeedback(result)
 
     if(result.ok){
-      setTimeout(function() {
-        window.location.href = './home.html'
-      },2000);
+      realoadPage()
     }
 
 }catch(error){
@@ -99,6 +96,25 @@ async function createTransaction (data) {
 }
 
 
+window.deleteTransaction = deleteTransaction
+
+async function deleteTransaction(idDelete){
+  try{
+    const result = await toDelete(`user/${id}/transaction/${idDelete}`, token)
+    realoadPage()
+    handleFeedback(result)
+
+  }catch(error){
+    console.error('Error:', error.message);
+  }
+}
+
+
+function realoadPage(){
+  setTimeout(function() {
+    window.location.href = './home.html'
+  },2000);
+}
 
 
 
