@@ -1,0 +1,73 @@
+html, body{
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff;
+}
+
+.navBar{
+    background: url("/assets/background.png") center/ cover no-repeat;
+    height: 90vh;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 50px;
+    color: #ffffff;
+}
+
+.header{
+    width: 100%;
+    height: 10vh;
+}
+
+.cardStyled{
+    background-color: #f7f7f7;
+    width: 300px;
+    
+}
+
+#feedback-toast, #feedback-toast-pet, #feedback-toast-register{
+    position: absolute;
+    top: 100px;
+    right: 30px;
+    z-index: 9999;
+  }
+
+
+.main{
+    background-color: #f7f7f7;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.boxDashbord{
+    height: 100%;
+    max-width: 1000px;
+}
+
+.search{
+    width: 250px;
+    color: #008171; 
+}
+
+
+.form-control:focus{
+    border-color: #008171;
+    box-shadow: none
+}
+
+.buttonPlus{
+    width: 60px;
+    background-color: #008171;
+    color: #ffffff
+}
+
+.modalButton{
+    width: 220px;
+}
+
+td{
+    font-size: 20px;
+}
