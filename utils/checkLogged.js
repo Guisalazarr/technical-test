@@ -1,3 +1,4 @@
+// Verifica se já possui usuário logado
 export function checkedLogged (){
     const logged = localStorage.getItem("logged");
 
@@ -7,7 +8,7 @@ export function checkedLogged (){
 }
 
 
-
+// busca os dados do usuário logado
 export function getUserLogged () {
   let userlogged = sessionStorage.getItem("logged")
 
