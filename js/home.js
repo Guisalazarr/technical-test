@@ -104,9 +104,8 @@ async function deleteTransaction(idDelete){
   try{
     const result = await toDelete(`user/${id}/transaction/${idDelete}`, token)
 
-    handleFeedback(result)
-    
     if(result.ok){
+      alert('Trancação deletada')
       realoadPage()
     }
    
